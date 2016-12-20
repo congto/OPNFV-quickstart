@@ -42,7 +42,7 @@ admin_network:
   usable_ip_range: 10.0.1.11,10.0.1.99
   gateway: 10.0.0.1
   provisioner_ip: 10.0.1.1
-  cidr: 10.0.1.0/24
+  cidr: 10.0.0.0/16
   dhcp_range: 10.0.1.2,10.0.1.10
   introspection_range: 10.0.1.100,10.0.1.120
 
@@ -54,7 +54,7 @@ admin_network:
 private_network:
   enabled: true
   vlan: native
-  cidr: 10.0.2.0/24
+  cidr: 10.0.0.0/16
   compute_interface: nic2
   controller_interface: nic2
 
@@ -72,7 +72,7 @@ public_network:
   compute_interface: nic3
   controller_interface: nic3
   vlan: native
-  cidr: 10.0.3.0/24
+  cidr: 10.0.0.0/16
   gateway: 10.0.0.1
   floating_ip_range: 10.0.3.200,10.0.3.220
   usable_ip_range: 10.0.3.10,10.0.3.199
@@ -85,7 +85,7 @@ public_network:
 storage_network:
   enabled: true
   vlan: native
-  cidr: 10.0.4.0/24
+  cidr: 10.0.0.0/16
   compute_interface: nic4
   controller_interface: nic4
 
