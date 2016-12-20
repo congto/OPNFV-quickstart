@@ -20,7 +20,7 @@ $ opnfv-util undercloud
 
 * overcloudへログインするには、undercloudにログインしてovercloudrcのユーザー、パスワードでログインします。
 
-* リモートサーバーからダッシュボードにアクセスするには次のように実行してください。
+* リモートのクライアントからOpenStack Dashboardにアクセスするには次のように実行してください。
 
 ```
 % ssh <ユーザー>@<KVM HostのIPアドレス> -g -L <適当なポート>:<dashboardのIPアドレス>:80
