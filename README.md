@@ -42,12 +42,28 @@ $ opnfv-util undercloud
 
 * [OPNFV Apex (Release Colorado)を使ってCentOS7上にlibvirt/OpenStack (RDO版Mitaka)/OpenDaylightの環境を構築する](http://qiita.com/s1061123/items/3935114785f044741ccc)
 
-ただし、OpenStackのリポジトリーの登録部分のみ、以下のようにMitakaを指定して実行した。
-
-```
-# Epel, RDOの登録
-yum install -y https://repos.fedorapeople.org/repos/openstack/openstack-mitaka/rdo-release-mitaka-6.noarch.rpm 
-yum install -y epel-release
-```
-
 私が使ったYAMLファイルをリポジトリーに置いておきます。
+
+### 要注意なところ
+
+rdo-releaseパッケージ
+もしくは
+centos-release-qemu-evパッケージ 
+をインストールする
+↓
+centos-release-qemu-evリポジトリーが有効になり、
+CentOS 7.xでKVMをインストールすると
+標準パッケージ(qemu-kvm:1.5.3)よりも新しいパッケージ(qemu-kvm-ev:2.6.0)
+が優先されるようになる。
+
+実際、次のコマンドを実行するとqemu-kvm-evの方が候補として上がる
+
+```
+yum groupinstall -y "Virtualization Host"
+```
+
+そしてこのバグがあるので古いQEMUパッケージが入ってしまうと
+うまく動作しないアプリケーションが出てくるかも。
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1365500
+https://bugzilla.redhat.com/show_bug.cgi?id=1371617
