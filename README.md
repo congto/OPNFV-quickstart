@@ -58,14 +58,12 @@ CentOS 7.xでKVMをインストールすると
 が優先されるようになる。
 ```
 
-実際、次のコマンドを実行するとqemu-kvm-evの方が候補として上がる
+qemu-kvmをインストールする必要があるようです。
 
-```
-yum groupinstall -y "Virtualization Host"
-```
 
-そしてこのバグがあるので古いQEMUパッケージが入ってしまうと
-うまく動作しないアプリケーションが出てくるかも。
+関連するバグ
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1365500
 https://bugzilla.redhat.com/show_bug.cgi?id=1371617
+
+
