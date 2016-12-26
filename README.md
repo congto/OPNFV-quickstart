@@ -46,6 +46,7 @@ $ opnfv-util undercloud
 
 ### 要注意なところ
 
+```
 rdo-releaseパッケージ
 もしくは
 centos-release-qemu-evパッケージ 
@@ -55,6 +56,7 @@ centos-release-qemu-evリポジトリーが有効になり、
 CentOS 7.xでKVMをインストールすると
 標準パッケージ(qemu-kvm:1.5.3)よりも新しいパッケージ(qemu-kvm-ev:2.6.0)
 が優先されるようになる。
+```
 
 実際、次のコマンドを実行するとqemu-kvm-evの方が候補として上がる
 
